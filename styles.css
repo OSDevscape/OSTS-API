@@ -1,4 +1,6 @@
-/* unified.css - Combined and deduplicated from all HTML files */
+/* =========================
+   Theme
+   ========================= */
 
 :root {
   --bg: #2b2620;
@@ -14,6 +16,10 @@
   --navy-hover: #3b3228;
 }
 
+/* =========================
+   Base layout & typography
+   ========================= */
+
 body {
   margin: 0;
   font-family: "Cinzel", "Georgia", serif;
@@ -27,7 +33,50 @@ body {
   padding-top: 80px;
 }
 
-/* Base header */
+.wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 40px;
+  padding: 0 16px 40px;
+}
+
+.logo {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  margin: 0 auto 18px;
+  display: block;
+}
+
+h1 {
+  margin: 6px 0;
+  font-size: 2rem;
+  color: var(--accent);
+  text-shadow: 0 2px 4px #000;
+}
+
+h2 {
+  margin: 18px 0 10px;
+  font-size: 1.3rem;
+  color: var(--fg);
+}
+
+p,
+li {
+  color: var(--muted);
+  max-width: 620px;
+  margin: 10px auto 18px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.98rem;
+  text-align: left;
+}
+
+/* =========================
+   Header + navigation
+   ========================= */
+
 header {
   width: 100%;
   background-color: var(--navy);
@@ -38,27 +87,21 @@ header {
   z-index: 1000;
 }
 
-/* Home page: centered nav */
+/* Home page: centered nav on desktop */
 .home-page header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.home-page nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-/* Pages with a back button: left-aligned header */
+/* Back-header pages (API, terms, privacy, license): left button */
 .back-header header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-/* Back button style (API, terms, privacy, license) */
+/* Back button */
 .back-btn {
   margin-left: 20px;
   background: none;
@@ -79,7 +122,33 @@ header {
   background-color: var(--navy-hover);
 }
 
-/* Shared nav/link styles for home page */
+/* Desktop nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Hamburger (home only; JS toggles .open on .main-nav) */
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--panel-border);
+  color: var(--fg);
+  font-family: "Cinzel", "Georgia", serif;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.hamburger:hover {
+  color: var(--accent);
+  background-color: var(--navy-hover);
+}
+
+/* Nav links & dropdown buttons */
 nav a,
 .dropbtn {
   color: var(--fg);
@@ -99,49 +168,10 @@ nav a,
 nav a:hover,
 .dropbtn:hover {
   color: var(--accent);
-}
-
-
-header {
-  width: 100%;
-  background-color: var(--navy);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  padding: 12px 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-nav a, .dropbtn, .back-btn {
-  color: var(--fg);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  font-size: 1rem;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: 0.2s ease-in-out;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: "Cinzel", "Georgia", serif;
-  margin-left: 20px;
-}
-
-nav a:hover, .dropbtn:hover, .back-btn:hover {
-  color: var(--accent);
   background-color: var(--navy-hover);
 }
 
+/* Dropdowns */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -178,44 +208,9 @@ nav a:hover, .dropbtn:hover, .back-btn:hover {
   display: block;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 40px;
-  padding: 0 16px 40px;
-}
-
-.logo {
-  width: 220px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  margin: 0 auto 18px;
-  display: block;
-}
-
-h1 {
-  margin: 6px 0;
-  font-size: 2rem;
-  color: var(--accent);
-  text-shadow: 0 2px 4px #000;
-}
-
-h2 {
-  margin: 18px 0 10px;
-  font-size: 1.3rem;
-  color: var(--fg);
-}
-
-p, li {
-  color: var(--muted);
-  max-width: 620px;
-  margin: 10px auto 18px;
-  line-height: 1.6;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.98rem;
-  text-align: left;
-}
+/* =========================
+   Pills, panels, buttons
+   ========================= */
 
 .pill-row {
   display: flex;
@@ -263,7 +258,63 @@ p, li {
   max-width: none;
 }
 
-pre, code {
+/* Feature lists */
+.feature-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+.feature-list li {
+  margin: 4px 0;
+}
+
+/* CTAs */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+
+.cta-btn,
+a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #1a1510;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin: 8px;
+  letter-spacing: 0.3px;
+}
+
+.cta-btn:hover,
+a.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.7);
+  background: var(--accent-dark);
+}
+
+.cta-secondary {
+  background: none;
+  color: var(--accent);
+  border: 1px solid var(--accent-dark);
+}
+
+/* =========================
+   Code & tables (API page)
+   ========================= */
+
+pre,
+code {
   font-family: "Roboto Mono", monospace;
   font-size: 0.84rem;
 }
@@ -285,7 +336,8 @@ table {
   font-size: 0.9rem;
 }
 
-th, td {
+th,
+td {
   padding: 6px 4px;
   border-bottom: 1px solid #3b3228;
   text-align: left;
@@ -318,58 +370,9 @@ tbody tr:last-child td {
   font-size: 0.78rem;
 }
 
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-  margin: 18px 0 8px;
-}
-
-.cta-btn, a.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: #1a1510;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin: 8px;
-  letter-spacing: 0.3px;
-}
-
-.cta-btn:hover, a.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(0,0,0,0.7);
-  background: var(--accent-dark);
-}
-
-.cta-secondary {
-  background: none;
-  color: var(--accent);
-  border: 1px solid var(--accent-dark);
-}
-
-.feature-list {
-  margin: 6px 0 0;
-  padding-left: 18px;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.94rem;
-  color: var(--muted);
-}
-
-.feature-list li {
-  margin: 4px 0;
-}
-
-ul {
-  max-width: 800px;
-  text-align: left;
-  padding-left: 20px;
-}
+/* =========================
+   Footer
+   ========================= */
 
 footer {
   margin-top: auto;
@@ -385,8 +388,10 @@ footer a {
   text-decoration: none;
 }
 
+/* =========================
+   Responsive: API table stacking
+   ========================= */
 
-/* Stack Core Endpoints table on small screens */
 @media (max-width: 768px) {
   .panel table {
     width: 100%;
@@ -394,19 +399,19 @@ footer a {
   }
 
   .panel table thead {
-    display: none;               /* hide headers */
+    display: none;
   }
 
-  .panel table, 
+  .panel table,
   .panel table tbody,
   .panel table tr,
   .panel table td {
-    display: block;              /* rows become vertical blocks */
+    display: block;
     width: 100%;
   }
 
   .panel table tr {
-    margin-bottom: 16px;         /* space between endpoint blocks */
+    margin-bottom: 16px;
     border-bottom: 1px solid #3b3228;
     padding-bottom: 8px;
   }
@@ -415,7 +420,6 @@ footer a {
     padding: 4px 0;
   }
 
-  /* Show labels using data-label if present */
   .panel table td::before {
     content: attr(data-label);
     display: block;
@@ -424,23 +428,70 @@ footer a {
     margin-bottom: 2px;
   }
 
-  /* Make endpoint visually stand out */
   .panel table td.endpoint {
     margin-top: 4px;
     font-weight: 600;
   }
 }
 
+/* =========================
+   Responsive: header / nav / hamburger
+   ========================= */
 
+@media (max-width: 768px) {
+  .home-page header {
+    justify-content: flex-start;
+    padding: 12px 16px;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    background-color: var(--navy);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 4px;
+  }
+}
+
+/* Extra small text tweaks */
 @media (max-width: 480px) {
   .logo {
     width: 180px;
   }
-  
+
   h1 {
     font-size: 1.6rem;
   }
-  
+
   h2 {
     font-size: 1.1rem;
   }

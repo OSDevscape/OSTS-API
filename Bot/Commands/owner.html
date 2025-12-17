@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OSTS · Owner Commands</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="back-header">
+  <header>
+    <button class="back-btn" onclick="window.location.href='/index.html'">⬅ Back</button>
+  </header>
+
+  <div class="wrapper">
+    <h1>Owner Commands</h1>
+    <p>
+      These commands are restricted to the bot owner and are not visible to regular users.
+    </p>
+
+    <div class="panel">
+      <h3>Core owner controls</h3>
+      <ul class="feature-list">
+        <li><code>!shutdown</code> – Safely shut down the bot instance.</li>
+        <li><code>!eval &lt;code&gt;</code> – Run owner‑only evaluation snippets.</li>
+        <li><code>!reload &lt;module&gt;</code> – Reload a command module without restarting.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>Security & overrides</h3>
+      <ul class="feature-list">
+        <li><code>!blacklist &lt;user&gt;</code> – Block a user from using any commands.</li>
+        <li><code>!whitelist &lt;user&gt;</code> – Allow a user to bypass certain checks.</li>
+        <li><code>!sudo &lt;user&gt; &lt;command&gt;</code> – Run a command as another user.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 OSMays8338 — All Rights Reserved.
+  </footer>
+</body>
+</html>

@@ -1,21 +1,15 @@
-# Serve JSON files directly
-[[redirects]]
-  from = "/API/v1/Clan/Rank/icons.json"
-  to   = "/API/v1/Clan/Rank/icons.json"
-  status = 200
+# =========================
+# Netlify Redirects
+# =========================
 
+# 1) Serve API files directly
 [[redirects]]
-  from = "/API/v1/Slayer_Diaries/Monster/Entries/*.json"
-  to   = "/API/v1/Slayer_Diaries/Monster/Entries/:splat"
-  status = 200
+from = "/API/*"
+to = "/API/:splat"
+status = 200
 
+# 2) SPA catch-all
 [[redirects]]
-  from = "/API/v1/Slayer_Master/Head/icons.json"
-  to   = "/API/v1/Slayer_Master/Head/icons.json"
-  status = 200
-
-# Catch-all for API routes / SPA
-[[redirects]]
-  from = "/*"
-  to   = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
