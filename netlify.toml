@@ -1,19 +1,21 @@
+# Serve JSON files directly
 [[redirects]]
-  from = "entries.json"
-  to = "/entries.json"
+  from = "/API/v1/Clan/Rank/icons.json"
+  to   = "/API/v1/Clan/Rank/icons.json"
   status = 200
 
 [[redirects]]
-  from = "ranks.json"
-  to = "/ranks.json"
+  from = "/API/v1/Slayer_Diaries/Monster/Entries/*.json"
+  to   = "/API/v1/Slayer_Diaries/Monster/Entries/:splat"
   status = 200
 
 [[redirects]]
-  from = "slayer.json"
-  to = "/slayer.json"
+  from = "/API/v1/Slayer_Master/Head/icons.json"
+  to   = "/API/v1/Slayer_Master/Head/icons.json"
   status = 200
 
+# Catch-all for API routes / SPA
 [[redirects]]
-  from = "slayer/*"
-  to = "/slayer.json"
+  from = "/*"
+  to   = "/index.html"
   status = 200
