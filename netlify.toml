@@ -2,10 +2,10 @@
 # Netlify Redirects
 # =========================
 
-# 1) Serve API files directly
+# 1) API gateway with rate limiting (Netlify Function)
 [[redirects]]
 from = "/API/*"
-to = "/API/:splat"
+to = "/.netlify/functions/api-gateway"
 status = 200
 
 # 2) SPA catch-all
