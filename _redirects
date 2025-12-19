@@ -1,7 +1,0 @@
-# Serve JSON files directly
-/API/v1/Clan/Rank/icons.json                 /API/v1/Clan/Rank/icons.json                 200
-/API/v1/Slayer_Diaries/Monster/Entries/*.json  /API/v1/Slayer_Diaries/Monster/Entries/:splat  200
-/API/v1/Slayer_Master/Head/icons.json        /API/v1/Slayer_Master/Head/icons.json        200
-
-# Catch-all for API routes
-/*                                          /index.html                                   200
