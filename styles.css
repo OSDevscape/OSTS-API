@@ -38,9 +38,27 @@ body {
   align-items: stretch;            /* let wrapper handle centering */
   padding-top: 80px;
 
-  /* NEW: global text wrapping */
+  /* global text wrapping */
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* NEW: no child can be wider than viewport */
+body * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* NEW: force wrapping for main text elements */
+p,
+span,
+a,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .wrapper {
@@ -81,10 +99,6 @@ li {
   font-family: "Roboto", sans-serif;
   font-size: 0.98rem;
   text-align: left;
-
-  /* NEW: make sure list / paragraph text never overflows */
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 /* =========================
@@ -510,4 +524,3 @@ footer a {
     font-size: 1.1rem;
   }
 }
-/* End of styles.css */
