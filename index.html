@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Old School Tool Set Bot</title>
-
+  
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#2b2620">
-
+  
   <link rel="canonical" href="/" />
-
+  
   <meta property="og:title" content="Old School Tool Set" />
   <meta property="og:description" content="A Discord bot for Old School RuneScape clans, powered by the Old School Tool Set API." />
   <meta property="og:image" content="https://gyazo.com/ec47322dca1b5586ef93be1810f250bf.png" />
   <meta property="og:url" content="https://osts.website/" />
   <meta property="og:type" content="website" />
-
+  
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Old School Tool Set" />
   <meta name="twitter:description" content="A Discord bot for Old School RuneScape clans, powered by the Old School Tool Set API." />
   <meta name="twitter:image" content="https://gyazo.com/ec47322dca1b5586ef93be1810f250bf.png" />
-
+  
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <script>
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function() {
       navigator.serviceWorker
         .register('/service-worker.js')
         .catch(console.error);
@@ -40,83 +41,89 @@
       ☰ Menu
     </button>
     
-    <nav class="main-nav">
-      <!-- Commands dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(event, 'commandsDropdown')">
-          🤖 Commands ▼
-        </button>
-        <div class="dropdown-content" id="commandsDropdown">
-          <a href="/Bot/Commands/owner.html">Owner</a>
-          <a href="/Bot/Commands/deputy.html">Deputy Owner</a>
-          <a href="/Bot/Commands/cabinet.html">Cabinet</a>
-          <a href="/Bot/Commands/member.html">Member</a>
-          <a href="/Bot/Commands/guest.html">Guest</a>
-        </div>
-      </div>
-      
-      <!-- About dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(event, 'aboutDropdown')">
-          ℹ️ About ▼
-        </button>
-        <div class="dropdown-content" id="aboutDropdown">
-          <a href="/About/bot.html">About the Bot</a>
-          <a href="/About/dev.html">About the Developer</a>
-        </div>
-      </div>
-      
-      <!-- API dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(event, 'apiDropdown')">
-          🗺️ API ▼
-        </button>
-        <div class="dropdown-content" id="apiDropdown">
-          <a href="/API/overview.html">API Overview</a>
-        </div>
-      </div>
-      
-      <!-- Legal dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(event, 'legalDropdown')">
-          📜 Legal ▼
-        </button>
-        <div class="dropdown-content" id="legalDropdown">
-          <a href="/Legal/terms.html">Terms of Service</a>
-          <a href="/Legal/privacy.html">Privacy Policy</a>
-          <a href="/Legal/license.html">License</a>
-        </div>
-      </div>
-    </nav>
-
+<nav class="main-nav">
+  <!-- Commands dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(event, 'commandsDropdown')">
+      🤖 Commands ▼
+    </button>
+    <div class="dropdown-content" id="commandsDropdown">
+      <a href="/Bot/Commands/owner.html">Owner</a>
+      <a href="/Bot/Commands/deputy.html">Deputy Owner</a>
+      <a href="/Bot/Commands/cabinet.html">Cabinet</a>
+      <a href="/Bot/Commands/member.html">Member</a>
+      <a href="/Bot/Commands/guest.html">Guest</a>
+    </div>
+  </div>
+  
+  <!-- Discord dropdown (NEW) -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(event, 'discordDropdown')">
+      💬 Discord ▼
+    </button>
+    <div class="dropdown-content" id="discordDropdown">
+      <a href="/discord.html">Join the Support Server</a>
+    </div>
+  </div>
+  
+  <!-- About dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(event, 'aboutDropdown')">
+      ℹ️ About ▼
+    </button>
+    <div class="dropdown-content" id="aboutDropdown">
+      <a href="/About/bot.html">About the Bot</a>
+      <a href="/About/dev.html">About the Developer</a>
+    </div>
+  </div>
+  
+  <!-- API dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(event, 'apiDropdown')">
+      🗺️ API ▼
+    </button>
+    <div class="dropdown-content" id="apiDropdown">
+      <a href="/API/overview.html">API Overview</a>
+    </div>
+  </div>
+  
+  <!-- Legal dropdown -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(event, 'legalDropdown')">
+      📜 Legal ▼
+    </button>
+    <div class="dropdown-content" id="legalDropdown">
+      <a href="/Legal/terms.html">Terms of Service</a>
+      <a href="/Legal/privacy.html">Privacy Policy</a>
+      <a href="/Legal/license.html">License</a>
+    </div>
+  </div>
+</nav>
+    
     <!-- Page copy button -->
     <button class="copy-link" title="Copy page link" onclick="copyCurrentUrl(event)">
-      <img src="https://i.gyazo.com/b560a214d3ef3ca74e0326b766b10a38.png"
-           alt="Copy link" width="24" height="24">
+      <img src="https://i.gyazo.com/b560a214d3ef3ca74e0326b766b10a38.png" alt="Copy link" width="24" height="24">
     </button>
   </header>
-
+  
   <div class="wrapper">
-    <img src="https://gyazo.com/ec47322dca1b5586ef93be1810f250bf.png"
-         alt="Old School Tool Set Logo" class="logo" />
-
+    <img src="https://gyazo.com/ec47322dca1b5586ef93be1810f250bf.png" alt="Old School Tool Set Logo" class="logo" />
+    
     <h1>Old School Tool Set</h1>
     <p class="hero-text">
       A Discord bot built for Old School RuneScape communities — bringing moderation, economy, and powerful clan utilities into one lore‑friendly package.
     </p>
-
+    
     <div class="pill-row">
       <div class="pill">Designed for OSRS clans</div>
       <div class="pill">Free to use</div>
       <div class="pill">Backed by the Old School Wiki</div>
     </div>
-
+    
     <div class="cta-row">
-      <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot%20applications.commands"
-         class="cta-btn">Invite to your server</a>
-      <a href="https://discord.gg/YOUR_SUPPORT_SERVER" class="cta-btn cta-secondary">Join support server</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot%20applications.commands" class="cta-btn">Invite to your server</a>
     </div>
-
+    
     <div class="panel">
       <h3>What the bot can do</h3>
       <ul class="feature-list">
@@ -127,7 +134,7 @@
       </ul>
     </div>
     
-        <div class="panel">
+    <div class="panel">
       <h3>Getting started</h3>
       <ul class="feature-list">
         <li>Invite the bot using the button above and select your server.</li>
@@ -137,13 +144,14 @@
       </ul>
     </div>
   </div>
-
+  
   <footer>
     © 2025 OSMays8338 — All Rights Reserved.
   </footer>
-
+  
   <div id="copy-toast">Link copied!</div>
-
+  
   <script src="/main.js"></script>
 </body>
+
 </html>
