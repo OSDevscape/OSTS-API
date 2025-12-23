@@ -44,5 +44,6 @@ status = 200
 # 4) Custom 404 page (catch‑all)
 [[redirects]]
 from = "/OSTS/index.html*"
-to = "/OSTS/404.html"
+to = "/OSTS/Pages/404.html"
 status = 404
+
