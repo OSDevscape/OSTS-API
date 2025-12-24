@@ -1,119 +1,116 @@
-    body {
-      background-color: #3c3c3c;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+/* ========== Base layout ========== */
 
-    .container {
+body {
+  background-color: #3c3c3c;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 40px;
 }
 
-    .header {
-  background: url('https://i.gyazo.com/d128d60ba90131d10a2a5a8c5235eb44.jpeg') no-repeat center center;
-  background-size: 100% 100%;
-  height: 200px;
+/* ========== Map header + overlay buttons ========== */
+
+.site-header {
   width: 100%;
 }
+
+/* OSRS map image */
+.header {
+  background: url("https://i.gyazo.com/d128d60ba90131d10a2a5a8c5235eb44.jpeg")
+    no-repeat center center;
+  background-size: 100% 100%;
+  height: 230px;          /* space for map + buttons */
+  width: 100%;
+  position: relative;     /* allow absolute children */
+  overflow: hidden;
+}
+
+/* Shared header button styles */
+.header .back-btn,
+.header .copy-link {
+  position: absolute;
+  top: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+/* Back button – top-left */
+.header .back-btn {
+  left: 8px;
+}
+
+/* Copy icon – top-right */
+.header .copy-link {
+  right: 8px;
+}
+
+.header .copy-link img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ========== Profile section (overlaps bottom of map) ========== */
 
 .profile-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Corrected from 'left' */
-  margin-top: -70px;
-  padding-left: 15px; /* Add padding here if you want to pad the whole section */
+  align-items: flex-start;
+  margin-top: -0px;      /* stronger overlap with map */
+  padding-left: 15px;
+  position: relative;
+  z-index: 1;             /* above map, below buttons */
 }
 
 .avatar {
   width: 120px;
   height: 120px;
-  background: url('https://gyazo.com/408cbbc58c3edb5fcb229ddcee679e35.png') no-repeat center;
+  background: url("https://gyazo.com/408cbbc58c3edb5fcb229ddcee679e35.png")
+    no-repeat center;
   background-size: cover;
-  border-radius: 50%;
   margin-bottom: 10px;
   align-self: flex-start;
 }
 
 .profile-text {
   text-align: left;
-  padding-left: 10px; /* Add padding directly to the text */
+  padding-left: 10px;
 }
 
 .profile-text h1 {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 1.8em;
   color: #f57c00;
   text-shadow: 0 0 1px #f57c00, 0 0 20px #930000;
   margin: 0;
-  text-align: left;
 }
 
 .profile-text p {
   font-size: 1.1em;
   margin: 5px 0 15px;
-  text-align: left;
 }
 
-    .button {
-  display: flex;
-  align-items: center;           /* Vertically center */
-  justify-content: center;       /* Horizontally center */
-  gap: 5px;                     /* Spacing between image and text */
-  margin: 10px auto;
-  width: 250px;
-  padding: 10px 20px;
-  background-color: #2b2b2b;
-  border: 2px solid #f57c00;
-  border-radius: 25px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  transition: background 0.3s;
-  text-align: center;
-}
-
-    .button img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-}
-
-    .button:hover {
-      background-color: #444;
-    }
-
-    .button img {
-      width: 28px;
-      height: 28px;
-      margin-right: 15px;
-    }
-
-    .buttons-container {
-      text-align: center;
-    }
-    
-    .footer {
-  position: flex;
-  bottom: 0;
-  width: 100%;
-  background-color: #2b2b2b;
-  color: #f57c00;
-  text-align: center;
-  padding: 10px 0;
-  font-family: 'Arial', sans-serif;
-  font-size: 0.9em;
-  border-top: 1px solid #f57c00;
-}
-
+/* ========== Link boxes ========== */
 
 .link-box {
   border: 2px solid #3c3c3c;
   border-radius: 12px;
   padding: 20px;
-  margin: 20px;
+  margin: 20px 0;
   background-color: #1e1e1e;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -124,32 +121,69 @@
   text-align: center;
 }
 
+.link-box h3 {
+  margin: 0 0 8px;
+  color: #f57c00;
+}
+
+/* Button list */
 .buttons-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+/* Individual link button */
 .button {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: #2a2a2a;
-  padding: 10px 15px;
-  border-radius: 8px;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  width: 250px;
+  padding: 10px 20px;
+  background-color: #2b2b2b;
+  border: 2px solid #f57c00;
+  border-radius: 25px;
   color: #ffffff;
   text-decoration: none;
-  transition: background 0.2s ease;
+  font-size: 1.05em;
+  transition: background 0.3s;
+}
+
+.button img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
 }
 
 .button:hover {
-  background-color: #444;
+  background-color: #444444;
 }
 
+/* ========== Footer ========== */
+
+.footer {
+  width: 100%;
+  background-color: #2b2b2b;
+  color: #f57c00;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  border-top: 1px solid #f57c00;
+}
+
+/* ========== Install banner (PWA) ========== */
 
 @keyframes slideDown {
-  from { transform: translateY(-100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 #install-banner {
@@ -164,10 +198,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Arial', sans-serif;
   border-bottom: 2px solid #f57c00;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.4s ease-out;
   box-sizing: border-box;
 }
@@ -208,11 +241,24 @@
 
 #install-banner #install-btn:hover,
 #install-banner .dismiss-btn:hover {
-  background-color: #444;
+  background-color: #444444;
 }
 
 .dismiss-btn {
   padding: 4px 8px;
   font-size: 1em;
   line-height: 1;
+}
+
+/* ========== Small screens ========== */
+
+@media (max-width: 480px) {
+  .button {
+    width: 220px;
+    font-size: 1em;
+  }
+
+  .profile-section {
+    margin-top: -60px; /* slightly reduced overlap on very small screens */
+  }
 }
