@@ -81,14 +81,15 @@ Whether you're looking for the best places to hunt, notable loot, or necessary p
 
 ### ⚙️ Powered By
 
-**Old School Tool Set (OSTS)** makes use of the following community resources:
+**Old School Tool Set (OSTS)** makes use of the following community resources and services:
 
 - 🧠 **[Wise Old Man API](https://docs.wiseoldman.net/api)** — for player, group, and competition data.  
+- 🛠️ **[Old School Tool Set API](https://osts.website/API/overview)** — custom endpoints for Slayer diaries, clan utilities, and ranking tools.  
 - 📚 **[Old School RuneScape Wiki](https://oldschool.runescape.wiki)** — content provided under the **CC BY-SA 3.0** license.  
 - 🤖 **[Bot Designer For Discord](https://botdesignerdiscord.com)** — for bot scripting and automation.  
 
 Old School RuneScape and related assets are trademarks of **Jagex Ltd.**  
-This project is **unaffiliated** with Jagex, the OSRS Wiki team, Wise Old Man, or Bot Designer For Discord.
+This project is **unaffiliated** with Jagex, the OSRS Wiki team, Wise Old Man, Bot Designer For Discord, or any other third-party service.
 
 ---
 
