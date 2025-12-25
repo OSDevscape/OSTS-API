@@ -1,17 +1,26 @@
 /* ========== Base layout ========== */
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;                 /* for flex layout */
+}
+
 body {
   background-color: #3c3c3c;
   color: #ffffff;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  display: flex;                /* make footer stick */
+  flex-direction: column;
 }
 
+/* main content wrapper */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px 40px;
+  flex: 1;                      /* take remaining height */
 }
 
 /* ========== Map header + overlay buttons ========== */
@@ -70,7 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -0px;      /* stronger overlap with map */
+  margin-top: 0;
   padding-left: 15px;
   position: relative;
   z-index: 1;             /* above map, below buttons */
@@ -161,6 +170,28 @@ body {
   background-color: #444444;
 }
 
+/* ========== GitHub Footer Icon ========== */
+
+.github-footer-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* center icon horizontally */
+  margin: 12px 0 4px;        /* gap above/below icon */
+}
+
+.github-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.github-footer-icon:hover {
+  color: #B89225;
+  transform: scale(1.15);
+}
+
 /* ========== Footer ========== */
 
 .footer {
@@ -229,7 +260,7 @@ body {
 #install-banner .dismiss-btn {
   background-color: #2b2b2b;
   color: white;
-  border: 2px solid #94731D;
+  border: 2px solid;
   border-radius: 20px;
   padding: 4px 10px;
   font-size: 0.8em;
